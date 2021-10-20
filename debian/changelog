@@ -1,0 +1,9 @@
+cling (0.9-0ppa1) unstable; urgency=medium
+
+  * Use llvm-config-9
+  * Disable plugins, Jupyter kernel and demo
+  * Enable cling to be built against shared libclang
+  * Don't check compatibility
+  * Export ClingTargets.cmake
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 20 Oct 2021 00:45:30 -0400
