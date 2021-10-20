@@ -10,21 +10,25 @@ set(SOURCES
   ADDITIONAL_HEADERS
   )
 
-set(LIBS
-  clangAnalysis
-  clangDriver
-  clangFrontend
-  clangParse
-  clangSema
-  clangAST
-  clangLex
-  clangSerialization
-  clangCodeGen
-  clangBasic
-  clangEdit
+if (LLVM_LIB_IS_SHARED)
+    set(LIBS clang-cpp)
+else()
+    set(LIBS
+        clangAnalysis
+        clangDriver
+        clangFrontend
+        clangParse
+        clangSema
+        clangAST
+        clangLex
+        clangSerialization
+        clangCodeGen
+        clangBasic
+        clangEdit
 
-  clingUtils
-)
+        clingUtils
+        )
+endif()
 
 set( LLVM_LINK_COMPONENTS
   analysis
