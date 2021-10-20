@@ -472,36 +472,6 @@ namespace {
     Opts.CharIsSigned = std::numeric_limits<char>::is_signed;
   }
 
-  // This must be a copy of clang::getClangToolFullVersion(). Luckily
-  // we'll notice quickly if it ever changes! :-)
-  static std::string CopyOfClanggetClangToolFullVersion(StringRef ToolName) {
-    cling::stdstrstream OS;
-#ifdef CLANG_VENDOR
-    OS << CLANG_VENDOR;
-#endif
-    OS << ToolName << " version " CLANG_VERSION_STRING " "
-       << getClangFullRepositoryVersion();
-
-    // If vendor supplied, include the base LLVM version as well.
-#ifdef CLANG_VENDOR
-    OS << " (based on LLVM " << PACKAGE_VERSION << ")";
-#endif
-
-    return OS.str();
-  }
-
-  ///\brief Check the compile-time clang version vs the run-time clang version,
-  /// a mismatch could cause havoc. Reports if clang versions differ.
-  static void CheckClangCompatibility() {
-    if (clang::getClangToolFullVersion("cling")
-        != CopyOfClanggetClangToolFullVersion("cling"))
-      cling::errs()
-        << "Warning in cling::CIFactory::createCI():\n  "
-        "Using incompatible clang library! "
-        "Please use the one provided by cling!\n";
-    return;
-  }
-
   /// \brief Retrieves the clang CC1 specific flags out of the compilation's
   /// jobs. Returns NULL on error.
   static const llvm::opt::ArgStringList*
@@ -1229,8 +1199,6 @@ static void stringifyPreprocSetting(PreprocessorOptions& PPOpts,
 
     // Create an instance builder, passing the LLVMDir and arguments.
     //
-
-    CheckClangCompatibility();
 
     const size_t argc = COpts.Remaining.size();
     const char* const* argv = &COpts.Remaining[0];
