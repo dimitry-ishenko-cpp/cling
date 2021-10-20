@@ -53,7 +53,7 @@ set(CLING_CONFIG_CMAKE_DIR)
 set(CLING_CONFIG_EXPORTS_FILE)
 
 if (NOT LLVM_INSTALL_TOOLCHAIN_ONLY)
-  get_property(cling_has_exports GLOBAL PROPERTY CLING_HAS_EXPORTS)
+  get_property(cling_has_exports GLOBAL PROPERTY CLING_EXPORTS)
   if(cling_has_exports)
     install(EXPORT ClingTargets DESTINATION ${CLING_INSTALL_PACKAGE_DIR}
             COMPONENT cling-cmake-exports)
