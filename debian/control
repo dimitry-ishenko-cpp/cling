@@ -2,14 +2,18 @@ Source: cling
 Section: devel
 Priority: optional
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
-Build-Depends: debhelper-compat (= 13), libclang-9-dev, llvm-9-dev, zlib1g-dev
+Build-Depends: debhelper-compat (= 13),
+ libclang-9-dev (>> 2:9~),
+ llvm-9-dev (>> 2:9~),
+ zlib1g-dev
 Standards-Version: 4.5.1
 Homepage: https://root.cern/cling/
 Rules-Requires-Root: no
 
 Package: cling-common
 Architecture: any
-Depends: libclang-common-9-dev, ${shlibs:Depends}, ${misc:Depends}
+Depends: libclang-common-9-dev (>> 2:9~),
+ ${shlibs:Depends}, ${misc:Depends}
 Description: Interactive C++ interpreter
  Cling is an interactive C++ interpreter, built on the top of LLVM and Clang
  libraries. Its advantages over the standard interpreters are that it has
@@ -25,7 +29,9 @@ Description: Interactive C++ interpreter
 
 Package: libcling
 Architecture: any
-Depends: cling-common (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: cling-common (= ${binary:Version}),
+ libclang-cpp9 (>> 2:9~),
+ ${shlibs:Depends}, ${misc:Depends}
 Description: Interactive C++ interpreter
  Cling is an interactive C++ interpreter, built on the top of LLVM and Clang
  libraries. Its advantages over the standard interpreters are that it has
@@ -41,7 +47,9 @@ Description: Interactive C++ interpreter
 
 Package: cling
 Architecture: any
-Depends: cling-common (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: cling-common (= ${binary:Version}),
+ libclang-cpp9 (>> 2:9~),
+ ${shlibs:Depends}, ${misc:Depends}
 Description: Interactive C++ interpreter
  Cling is an interactive C++ interpreter, built on the top of LLVM and Clang
  libraries. Its advantages over the standard interpreters are that it has
@@ -57,7 +65,8 @@ Description: Interactive C++ interpreter
 
 Package: libcling-dev
 Architecture: any
-Depends: libcling (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libcling (= ${binary:Version}),
+ ${shlibs:Depends}, ${misc:Depends}
 Description: Interactive C++ interpreter
  Cling is an interactive C++ interpreter, built on the top of LLVM and Clang
  libraries. Its advantages over the standard interpreters are that it has
