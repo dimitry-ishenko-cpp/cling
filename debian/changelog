@@ -1,3 +1,13 @@
+cling (0.9-0ppa2) unstable; urgency=medium
+
+  * Split the package
+  * Depend on llvm (>> 2:9~)
+  * Update README.md
+  * Add building instructions
+  * Depend on cmake, set focal compat level (= 12)
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 01 Dec 2021 17:49:36 -0500
+
 cling (0.9-0ppa1) unstable; urgency=medium
 
   * Use llvm-config-9
