@@ -2,7 +2,8 @@ Source: cling
 Section: devel
 Priority: optional
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: cmake (>= 3.4.3),
+ debhelper-compat (= 12),
  libclang-9-dev (>> 2:9~),
  llvm-9-dev (>> 2:9~),
  zlib1g-dev
