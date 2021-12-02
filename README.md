@@ -7,6 +7,11 @@ C++ interpreter from CERN. It includes several patches that do the following:
 [LLVM/Clang](https://github.com/dimitry-ishenko-cpp/llvm-toolchain-9); and
 * Enable easy Debian packaging.
 
+Both Cling and [xeus-cling](https://github.com/dimitry-ishenko-cpp/xeus-cling)
+(a C++ Jupyter kernel built on top of Cling), along with other supporting
+packages can be conveniently installed using
+[ppa:ppa-verse/cling](https://launchpad.net/~ppa-verse/+archive/ubuntu/cling).
+
 Building instructions:
 
 ```bash
@@ -26,7 +31,7 @@ cd ..
 # build source package
 dpkg-source -b ${p}
 
-# build binary package locally...
+# build .deb package locally...
 sudo pbuilder build ${p}_${r}.dsc
 
 # ...or generate .changes file and...
@@ -34,14 +39,9 @@ cd ${p}
 dpkg-genchanges -S -sa -O../${p}_${r}_amd64.changes # -sa => -sd when upgrading
 cd ..
 
-# build in a PPA
+# ...upload it to a PPA
 debsign ${p}_${r}_amd64.changes
 dput ppa:... ${p}_${r}_amd64.changes
 
 # share and enjoy
 ```
-
-Both Cling and [xeus-cling](https://github.com/dimitry-ishenko-cpp/xeus-cling)
-(a C++ Jupyter kernel built on top of Cling), along with other supporting
-packages can also be conveniently installed through
-[ppa:ppa-verse/cling](https://launchpad.net/~ppa-verse/+archive/ubuntu/cling).
