@@ -23,23 +23,16 @@ r=$(cd ${p} && git log -n1 --oneline --no-decorate `git describe --tags --abbrev
 v=${r%-*}
 v=${v#*:}
 
-# create upstream tarball
-cd ${p}
-dh_make --createorig -p ${p}_${v}
-cd ..
-
 # build source package
 dpkg-source -b ${p}
 
 # build .deb package locally...
 sudo pbuilder build ${p}_${r}.dsc
 
-# ...or generate .changes file and...
-cd ${p}
-dpkg-genchanges -S -sa -O../${p}_${r}_amd64.changes # -sa => -sd when upgrading
-cd ..
+# ...or generate .changes file and upload it to a PPA
+# NB: change -sa to -sd when upgrading
+(cd ${p} && dpkg-genchanges -S -sa -O../${p}_${r}_amd64.changes)
 
-# ...upload it to a PPA
 debsign ${p}_${r}_amd64.changes
 dput ppa:... ${p}_${r}_amd64.changes
 
