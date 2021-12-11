@@ -1,24 +1,24 @@
 # Cling - The Interactive C++ Interpreter
 
 This repository is a clone of the [Cling](https://root.cern/cling/) interactive
-C++ interpreter from CERN. It includes several patches that do the following:
+C++ interpreter from CERN. It includes several patches that:
 
 * Allow it to be built against patched external
-[LLVM/Clang](https://github.com/dimitry-ishenko-cpp/llvm-toolchain-9); and
-* Enable easy Debian packaging.
+[LLVM/Clang](https://salsa.debian.org/dimitry-ishenko/llvm-toolchain-9); and
+* Enable Debian packaging.
 
-Both Cling and [xeus-cling](https://github.com/dimitry-ishenko-cpp/xeus-cling)
-(a C++ Jupyter kernel built on top of Cling), along with other supporting
-packages can be conveniently installed using
+Both Cling and [xeus-cling](https://github.com/jupyter-xeus/xeus-cling) (a C++
+Jupyter kernel built on top of Cling), along with other supporting packages can
+be conveniently installed using
 [ppa:ppa-verse/cling](https://launchpad.net/~ppa-verse/+archive/ubuntu/cling).
 
 Building instructions:
 
 ```bash
-p=cling b=debian # or focal or impish
+p=cling b=debian # or another branch
 
 # clone this repo
-git clone -b ${b} --depth 1 https://github.com/dimitry-ishenko-cpp/${p}.git
+git clone -b ${b} https://salsa.debian.org/dimitry-ishenko/${p}.git
 r=$(cd ${p} && git log -n1 --oneline --no-decorate `git describe --tags --abbrev=0` | cut -d/ -f2)
 v=${r%-*}
 v=${v#*:}
