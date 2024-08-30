@@ -1,0 +1,25 @@
+diff --git a/lib/Interpreter/CIFactory.cpp b/lib/Interpreter/CIFactory.cpp
+index aabb4d81..80e229c5 100644
+--- a/lib/Interpreter/CIFactory.cpp
++++ b/lib/Interpreter/CIFactory.cpp
+@@ -483,19 +483,13 @@ namespace {
+   static std::string CopyOfClanggetClangToolFullVersion(StringRef ToolName) {
+     cling::stdstrstream OS;
+ #ifdef CLANG_VENDOR
+-    OS << CLANG_VENDOR;
++    OS << CLANG_VENDOR << " ";
+ #endif
+     OS << ToolName << " version " CLANG_VERSION_STRING;
+     std::string repo = getClangFullRepositoryVersion();
+     if (!repo.empty()) {
+        OS << " " << repo;
+     }
+-
+-    // If vendor supplied, include the base LLVM version as well.
+-#ifdef CLANG_VENDOR
+-    OS << " (based on LLVM " << PACKAGE_VERSION << ")";
+-#endif
+-
+     return OS.str();
+   }
+ 
