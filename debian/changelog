@@ -1,3 +1,9 @@
+cling (1.1-3) unstable; urgency=medium
+
+  * Don't force C++ standard
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 24 Sep 2024 10:50:19 -0400
+
 cling (1.1-2) unstable; urgency=medium
 
   * Rely on default g++
