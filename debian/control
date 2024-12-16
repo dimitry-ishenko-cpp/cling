@@ -4,13 +4,13 @@ Priority: optional
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
 Build-Depends: debhelper-compat (= 12),
  cmake,
- clang-tools-16 (>> 2:16~),
+ clang-tools-18 (>> 2:18~),
  dh-exec,
- libclang-16-dev (>> 2:16~),
- libclang-cpp16-dev (>> 2:16~),
- libpolly-16-dev (>> 2:16~),
+ libclang-18-dev (>> 2:18~),
+ libclang-cpp18-dev (>> 2:18~),
+ libpolly-18-dev (>> 2:18~),
  libzstd-dev,
- llvm-16-dev (>> 2:16~),
+ llvm-18-dev (>> 2:18~),
  lsb-release,
  zlib1g-dev
 Standards-Version: 4.6.0
@@ -20,7 +20,7 @@ Rules-Requires-Root: no
 Package: cling-common
 Architecture: any
 Depends: ${misc:Depends},
- libclang-common-16-dev (>> 2:16~)
+ libclang-common-18-dev (>> 2:18~)
 Description: Interactive C++ interpreter
  Cling is an interactive C++ interpreter, built on the top of LLVM and Clang
  libraries. Its advantages over the standard interpreters are that it has
