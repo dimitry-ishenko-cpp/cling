@@ -1,3 +1,117 @@
+cling (1.2-1) unstable; urgency=medium
+
+  [ Dimitry Ishenko ]
+  * Update LLVM deps
+  * Update source from tag 'v1.2'
+
+  [ Vassil Vassilev ]
+  * Prepare for releasing cling v1.2
+
+  [ ferdymercury ]
+  * strlen optimization: use constexpr instead of runtime-constant
+
+  [ Jonas Hahnfeld ]
+  * Always handle Error of createObjectFile
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Add test for trailing return types at prompt
+  * Handle trailing return types at prompt
+
+  [ Jonas Hahnfeld ]
+  * Ignore Error during creation of JITLink
+  * Handle Error in getSymbolAddress
+  * Handle Error in addOrReplaceDefinition
+
+  [ Vipul Cariappa ]
+  * fix error handling when parsing invaild code
+
+  [ Fredrik ]
+  * Update Doxygen typos and RunFunction description (code change in
+    5f342c55ee32afd06305a9f4e31b0688149a46ff )
+
+  [ dbonner ]
+  * Add Jupyter kernels for C++20 and C++2b (Nb: C++2b is a working
+    draft of C++23).
+
+  [ Jonas Rembser ]
+  * Fix warning in clad CMakeLists.txt
+
+  [ Bertrand Bellenot ]
+  * Add Ninja support on Windows (#16690)
+
+  [ Danilo Piparo ]
+  * Build clad with one core only
+
+  [ Bertrand Bellenot ]
+  * Enable the `asan` option on Windows
+
+  [ Jonas Rembser ]
+  * Make it possible to pass existing `CLAD_SOURCE_DIR`
+
+  [ Aaron Jomy ]
+  * Add interfaces that expose JIT
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Make cling::utils::Lookup::Named look into using directives
+
+  [ Jonas Hahnfeld ]
+  * Work around constructor priority bug
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Migrate to `FileEntryRef` and `DirectoryEntryRef`
+
+  [ Jonas Hahnfeld ]
+  * Use default JIT code model with JITLink
+  * Run PreventLocalOptPass last
+  * Enable JITLink by default for AArch64 on Linux
+  * Fix weak hidden symbols on AArch64
+  * Fix macOS 13 modulemap for LLVM 18
+  * Update expected output of cling/test/Lookup/data.C
+  * Fix option parsing, again
+  * Enable conforming preprocessor with MSVC
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Clear JITDylibs manually to avoid assertion failure
+
+  [ Jonas Hahnfeld ]
+  * Replace symbols in platform Dylib
+  * Move generators to ProcessSymbols JITDylib
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Fix C++20 builds
+
+  [ Jonas Hahnfeld ]
+  * Set `BuiltinHeadersInSystemModules = 1`
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * Do not report an error if the fileType is a `tapi_file`
+
+  [ Jonas Hahnfeld ]
+  * Disable line numbers in error messages and warnings
+  * Adapt tok::eof -> tok::annot_repl_input_end
+
+  [ Devajith Valaparambil Sreeramaswamy ]
+  * JITTargetAddress --> ExecutorAddr
+  * Update `OPTION()` to match rebased OptTable
+  * Adapt to changes in llvm Option
+  * Rename `OpenMPIsDevice` to `OpenMPIsTargetDevice`
+  * Correct the assignment of `LangOptions`
+  * Update `ReadPreprocessorOptions` parameters
+  * Use `isPureVirtual`
+  * Additional parameters in `AnnotateAttr::CreateImplicit`
+  * Remove unused/non-existing header `PassManagerBuilder.h`
+  * Update includes to match headers moved to `TargetParsers`
+  * Include missing headers
+  * Register callbacks with `MAM` instead of `FAM`
+  * Use `FileEntryRef` and `getFileRef` methods
+  * `clang::codegenoptions` --> `llvm::codegenoptions`
+  * Rename enums to match upstream LLVM 18
+
+  [ Vassil Vassilev ]
+  * Bump cling version to 1.2~dev.
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 16 Dec 2024 17:39:45 -0500
+
 cling (1.1-4) unstable; urgency=medium
 
   * Explicit C++17 standard
