@@ -1,3 +1,12 @@
+cling (1.2-2) unstable; urgency=medium
+
+  * Back-port LLVM patch to fix compilation
+  * debian: switch to compat level 13
+  * d/copyright: update
+  * d/control: cosmetics
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 20 Sep 2025 19:06:02 -0400
+
 cling (1.2-1) unstable; urgency=medium
 
   [ Dimitry Ishenko ]
