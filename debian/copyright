@@ -3,10 +3,9 @@ Upstream-Name: cling
 Source: https://root.cern/cling/
 
 Files: *
-Copyright: 2007-2024 by the Cling Authors
-License: LGPL-2+
-Comment: Developed by The ROOT Team; CERN and Fermilab
+Copyright: 2007-2025, The Cling Project
+License: NCSA
 
 Files: debian/*
-Copyright: 2021-2024 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+Copyright: 2021-2025, Dimitry Ishenko <dimitry.ishenko@gmail.com>
 License: GPL-2+
