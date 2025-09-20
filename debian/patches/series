@@ -1,2 +1,3 @@
 0001-Disable-plugins-Jupyter-kernel-and-demo.patch
 0002-Tweak-version.patch
+0003-Use-single-Parser-for-LookupHelper.patch
