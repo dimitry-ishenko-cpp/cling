@@ -3,10 +3,9 @@ Section: devel
 Priority: optional
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
 Build-Depends:
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
  cmake,
  clang-tools-18 (>> 2:18~),
- dh-exec,
  libclang-18-dev (>> 2:18~),
  libclang-cpp18-dev (>> 2:18~),
  libpolly-18-dev (>> 2:18~),
@@ -14,7 +13,7 @@ Build-Depends:
  llvm-18-dev (>> 2:18~),
  lsb-release,
  zlib1g-dev
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Homepage: https://root.cern/cling/
 Rules-Requires-Root: no
 
